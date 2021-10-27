@@ -36,20 +36,48 @@ class Anasayfa extends StatefulWidget {
   State<Anasayfa> createState() => _AnasayfaState();
 }
 
+class HexColor extends Color {
+  static int _getColorFromHex(String hexColor) {
+
+    hexColor = hexColor.toUpperCase().replaceAll("#", "");
+    if (hexColor.length == 6) {
+      hexColor = "FF" + hexColor;
+    }
+    return int.parse(hexColor, radix: 16);
+  }
+
+  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
+}
+
 class _AnasayfaState extends State<Anasayfa> {
 
   late var ekranBoyutu = MediaQuery.of(context);
   late var ekranGenisligi = ekranBoyutu.size.width;
   late var ekranYuksekligi = ekranBoyutu.size.height;
 
+  Color color = HexColor("#121212"); //background color
+  Color color1 = HexColor("#1DB954");
+  Color color2 = HexColor("#FFFFFF");
+  Color color3 = HexColor("#000000");
+  Color color4 = HexColor("#8d67ab"); //pop purple
+  Color color5 = HexColor("#e61e32"); //rock red
+  Color color6 = HexColor("#ba5d07"); //hip hop
+  Color color7 = HexColor("#1e3264"); //folk akustik
+  Color color8 = HexColor("#e13300"); //podcast
+  Color color9 = HexColor("#1e3264"); //senin için
+  Color color10 = HexColor("#8d67ab"); //listeler
+  Color color11 = HexColor("#e8115b"); //yeni çıkanlar
+  Color color12 = HexColor("#282828"); //navigation bar color
+  Color color13 = HexColor("#b3b3b3"); //unselected color
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
-        unselectedItemColor: Colors.white54,
-        backgroundColor: Colors.white10,
-        selectedItemColor: Colors.white,
+        unselectedItemColor: color13,
+        backgroundColor: color12,
+        selectedItemColor: color2,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_filled),
@@ -66,7 +94,7 @@ class _AnasayfaState extends State<Anasayfa> {
           ),
         ],
       ),
-      backgroundColor: Colors.black26,
+      backgroundColor: color,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -114,7 +142,7 @@ class _AnasayfaState extends State<Anasayfa> {
                     Container(
                       margin: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.purple,
+                        color: color4,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       alignment: const FractionalOffset(0.08,0.18),
@@ -132,7 +160,7 @@ class _AnasayfaState extends State<Anasayfa> {
                     Container(
                       margin: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: color5,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       alignment: const FractionalOffset(0.08,0.18),
@@ -161,7 +189,7 @@ class _AnasayfaState extends State<Anasayfa> {
                     Container(
                       margin: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.deepOrange,
+                        color: color6,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       alignment: const FractionalOffset(0.08,0.18),
@@ -179,7 +207,7 @@ class _AnasayfaState extends State<Anasayfa> {
                     Container(
                       margin: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.deepPurple,
+                        color: color7,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       alignment: const FractionalOffset(0.08,0.18),
@@ -213,7 +241,7 @@ class _AnasayfaState extends State<Anasayfa> {
                     Container(
                       margin: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.redAccent,
+                        color: color8,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       alignment: const FractionalOffset(0.08,0.18),
@@ -231,7 +259,7 @@ class _AnasayfaState extends State<Anasayfa> {
                     Container(
                       margin: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.purple,
+                        color: color9,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       alignment: const FractionalOffset(0.08,0.18),
@@ -260,7 +288,7 @@ class _AnasayfaState extends State<Anasayfa> {
                     Container(
                       margin: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.purpleAccent,
+                        color: color10,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       alignment: const FractionalOffset(0.08,0.18),
@@ -278,7 +306,7 @@ class _AnasayfaState extends State<Anasayfa> {
                     Container(
                       margin: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: Colors.pink,
+                        color: color11,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       alignment: const FractionalOffset(0.08,0.18),

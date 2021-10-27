@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:spotify_practice/class.dart';
 
 void main() {
   runApp(const A());
