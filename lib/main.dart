@@ -75,12 +75,7 @@ class _AnasayfaState extends State<Anasayfa> {
               ),
               const Padding(
                 padding: EdgeInsets.only(top: 18.0, bottom: 10, left: 3),
-                child: Text(
-                  " Ara",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 31,
-                      fontWeight: FontWeight.bold),
+                child: Text(" Ara", style: TextStyle(color: Colors.white, fontSize: 31, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -108,21 +103,13 @@ class _AnasayfaState extends State<Anasayfa> {
               ),
               const Padding(
                 padding: EdgeInsets.only(top: 14, left: 3, bottom: 14),
-                child: Text(
-                  "  En çok dinlediğin türler",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                ),
+                child: Text("  En çok dinlediğin türler", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
               ),
               contRows(ekranGenisligi/2.2, 0xFF8d67ab, "\nPop\n\n", 0xFFe61e32, "\nRock\n\n"),
               contRows(ekranGenisligi/2.2, 0xFFba5d07, "\nHip Hop\n\n", 0xFF1e3264, "\nFolk ve\nAkustik\n"),
               const Padding(
                 padding: EdgeInsets.only(bottom: 8),
-                child: Text(
-                  "\n  Hepsine göz at",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white),
-                ),
+                child: Text("\n  Hepsine göz at", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
               ),
               contRows(ekranGenisligi/2.2, 0xFFe13300, "\nPodcast'ler\n\n", 0xFF1e3264, "\nSenin için\nHazırlandı\n"),
               contRows(ekranGenisligi/2.2, 0xFF8d67ab, "\nListeler\n\n", 0xFFe8115b, "\nYeni Çıkanlar\n\n"),
