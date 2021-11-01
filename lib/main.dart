@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:spotify_practice/A.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,23 +29,8 @@ class MyApp extends StatelessWidget {
 class Anasayfa extends StatefulWidget {
   const Anasayfa({Key? key}) : super(key: key);
 
-
-
   @override
   State<Anasayfa> createState() => _AnasayfaState();
-}
-
-class HexColor extends Color {
-  static int _getColorFromHex(String hexColor) {
-
-    hexColor = hexColor.toUpperCase().replaceAll("#", "");
-    if (hexColor.length == 6) {
-      hexColor = "FF" + hexColor;
-    }
-    return int.parse(hexColor, radix: 16);
-  }
-
-  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }
 
 class _AnasayfaState extends State<Anasayfa> {
@@ -55,29 +39,15 @@ class _AnasayfaState extends State<Anasayfa> {
   late var ekranGenisligi = ekranBoyutu.size.width;
   late var ekranYuksekligi = ekranBoyutu.size.height;
 
-  Color color = HexColor("#121212"); //background color
-  Color color1 = HexColor("#1DB954");
-  Color color2 = HexColor("#FFFFFF");
-  Color color3 = HexColor("#000000");
-  Color color4 = HexColor("#8d67ab"); //pop purple
-  Color color5 = HexColor("#e61e32"); //rock red
-  Color color6 = HexColor("#ba5d07"); //hip hop
-  Color color7 = HexColor("#1e3264"); //folk akustik
-  Color color8 = HexColor("#e13300"); //podcast
-  Color color9 = HexColor("#1e3264"); //senin için
-  Color color10 = HexColor("#8d67ab"); //listeler
-  Color color11 = HexColor("#e8115b"); //yeni çıkanlar
-  Color color12 = HexColor("#282828"); //navigation bar color
-  Color color13 = HexColor("#b3b3b3"); //unselected color
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
-        unselectedItemColor: color13,
-        backgroundColor: color12,
-        selectedItemColor: color2,
+        unselectedItemColor: Color(0xFFb3b3b3),
+        backgroundColor: Color(0xFF282828),
+        selectedItemColor: Color(0xFFFFFFFF),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_filled),
@@ -86,7 +56,6 @@ class _AnasayfaState extends State<Anasayfa> {
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Ara',
-
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.dehaze),
@@ -94,239 +63,127 @@ class _AnasayfaState extends State<Anasayfa> {
           ),
         ],
       ),
-      backgroundColor: color,
+      backgroundColor: Color(0xFF121212),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:
-            [
+            children: [
               const SizedBox(
                 height: 52,
               ),
               const Padding(
-                padding: EdgeInsets.only(top: 18.0,bottom: 10,left: 3),
-                child: Text(" Ara",style: TextStyle(color: Colors.white,fontSize: 31,fontWeight: FontWeight.bold),textAlign: TextAlign.left,),
+                padding: EdgeInsets.only(top: 18.0, bottom: 10, left: 3),
+                child: Text(
+                  " Ara",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 31,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.left,
+                ),
               ),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: TextField(
                   style: TextStyle(
                       decorationColor: Colors.white,
-                      backgroundColor: Colors.white
-                  ),
+                      backgroundColor: Colors.white),
                   decoration: InputDecoration(
                     focusedBorder: InputBorder.none,
-                    prefixIcon: Icon(Icons.search,color: Colors.black,),
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Colors.black,
+                    ),
                     fillColor: Colors.white,
                     filled: true,
                     hintText: "Sanatçılar, şarkılar veya podcast'ler",
-                    hintStyle: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(6))),
+                    hintStyle: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(6))),
                   ),
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(top: 14,left: 3,bottom: 14),
-                child: Text("  En çok dinlediğin türler",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-              ),
-              GestureDetector(
-                onTap: (){
-                  print("Pop veya Rock seçildi.");
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children:
-                  [
-                    Container(
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: color4,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      alignment: const FractionalOffset(0.08,0.18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:
-                        const [
-                          Text("\nPop\n\n",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Icon(Icons.queue_music),
-                        ],
-                      ),
-                      height: 95,
-                      width: ekranGenisligi/2.2,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: color5,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      alignment: const FractionalOffset(0.08,0.18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:
-                        const [
-                          Text("\nRock\n\n",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Icon(Icons.queue_music),
-                        ],
-                      ),
-                      height: 95,
-                      width: ekranGenisligi/2.2,
-                    ),
-                  ],
+                padding: EdgeInsets.only(top: 14, left: 3, bottom: 14),
+                child: Text(
+                  "  En çok dinlediğin türler",
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
                 ),
               ),
-              GestureDetector(
-                onTap: (){
-                  print("Hip Hop veya Akustik seçildi.");
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children:
-                  [
-                    Container(
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: color6,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      alignment: const FractionalOffset(0.08,0.18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:
-                        const [
-                          Text("\nHip Hop\n\n",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Icon(Icons.queue_music),
-                        ],
-                      ),
-                      height: 95,
-                      width: ekranGenisligi/2.2,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: color7,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      alignment: const FractionalOffset(0.08,0.18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:
-                        const [
-                          Text("\nFolk ve\nAkustik\n",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Icon(Icons.queue_music),
-                        ],
-                      ),
-                      height: 95,
-                      width: ekranGenisligi/2.2,
-                    ),
-                  ],
-                ),
-              ),
+              contRows(ekranGenisligi/2.2, 0xFF8d67ab, "\nPop\n\n", 0xFFe61e32, "\nRock\n\n"),
+              contRows(ekranGenisligi/2.2, 0xFFba5d07, "\nHip Hop\n\n", 0xFF1e3264, "\nFolk ve\nAkustik\n"),
               const Padding(
                 padding: EdgeInsets.only(bottom: 8),
-                child: Text("\n  Hepsine göz at",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-              ),
-              GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => A()));
-                  print("Podcast'ler veya Senin için Hazırlandı seçildi.");
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children:
-                  [
-                    Container(
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: color8,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      alignment: const FractionalOffset(0.08,0.18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:
-                        const [
-                          Text("\nPodcast'ler\n\n",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Icon(Icons.queue_music),
-                        ],
-                      ),
-                      height: 95,
-                      width: ekranGenisligi/2.2,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: color9,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      alignment: const FractionalOffset(0.08,0.18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:
-                        const [
-                          Text("\nSenin için\nHazırlandı\n",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Icon(Icons.queue_music),
-                        ],
-                      ),
-                      height: 95,
-                      width: ekranGenisligi/2.2,
-                    ),
-                  ],
+                child: Text(
+                  "\n  Hepsine göz at",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
-              GestureDetector(
-                onTap: (){
-                  print("Listeler veya Yeni Çıkanlar seçildi.");
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children:
-                  [
-                    Container(
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: color10,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      alignment: const FractionalOffset(0.08,0.18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:
-                        const [
-                          Text("\nListeler\n\n",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Icon(Icons.queue_music),
-                        ],
-                      ),
-                      height: 95,
-                      width: ekranGenisligi/2.2,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: color11,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      alignment: const FractionalOffset(0.08,0.18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:
-                        const [
-                          Text("\nYeni Çıkanlar\n\n",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                          Icon(Icons.queue_music),
-                        ],
-                      ),
-                      height: 95,
-                      width: ekranGenisligi/2.2,
-                    ),
-                  ],
-                ),
-              ),
+              contRows(ekranGenisligi/2.2, 0xFFe13300, "\nPodcast'ler\n\n", 0xFF1e3264, "\nSenin için\nHazırlandı\n"),
+              contRows(ekranGenisligi/2.2, 0xFF8d67ab, "\nListeler\n\n", 0xFFe8115b, "\nYeni Çıkanlar\n\n"),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+class contRows extends StatelessWidget {
+
+  final contSize;
+  final contColor1;
+  final contText1;
+  final contColor2;
+  final contText2;
+
+  contRows(this.contSize, this.contColor1, this.contText1, this.contColor2, this.contText2);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+           margin: EdgeInsets.all(8),
+           decoration: BoxDecoration(
+           color: Color(contColor1),
+           borderRadius: BorderRadius.circular(5),
+            ),
+           alignment: FractionalOffset(0.08, 0.18),
+           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+            Text("$contText1", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+            Icon(Icons.queue_music),
+            ],
+           ),
+           height: 95,
+           width: contSize,
+           ),
+          Container(
+            margin: EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Color(contColor2),
+              borderRadius: BorderRadius.circular(5),
+            ),
+            alignment: FractionalOffset(0.08, 0.18),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("$contText2", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                Icon(Icons.queue_music),
+              ],
+            ),
+            height: 95,
+            width: contSize,
+          ),
+        ],
       ),
     );
   }
