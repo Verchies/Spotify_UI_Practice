@@ -12,13 +12,20 @@ class _calmaListeleriState extends State<calmaListeleri> {
   Future<List<muzikOzellik>> sarkilariGetir() async {
     var sarkiList = <muzikOzellik>[];
 
-    var l1 = muzikOzellik("assets/listolustur.png", "Çalma Listesi Oluştur ","");
-    var l2 = muzikOzellik("assets/begenilen.png", "Beğenilen Şarkılar", "49 şarkı");
-    var l3 = muzikOzellik("assets/bestonesList.png", "Best Ones Ever", "oluşturan Verchies");
-    var l4 = muzikOzellik("assets/nowadays.png", "Nowadays", "oluşturan Verchies");
-    var l5 = muzikOzellik("assets/listeninbiri.png", "Gerçekten ügün bu gözler", "oluşturan Melis");
-    var l6 = muzikOzellik("assets/ucuncuyeniler.png", "Üçüncü Yeniler", "oluşturan Verchies");
-    var l7 = muzikOzellik("assets/radio.png", "Radyo'dan Beğenilenler", "oluşturan Verchies");
+    var l1 =
+        muzikOzellik("assets/listolustur.png", "Çalma Listesi Oluştur ", "");
+    var l2 =
+        muzikOzellik("assets/begenilen.png", "Beğenilen Şarkılar", "49 şarkı");
+    var l3 = muzikOzellik(
+        "assets/bestonesList.png", "Best Ones Ever", "oluşturan Verchies");
+    var l4 =
+        muzikOzellik("assets/nowadays.png", "Nowadays", "oluşturan Verchies");
+    var l5 = muzikOzellik("assets/listeninbiri.png", "Gerçekten ügün bu gözler",
+        "oluşturan Melis");
+    var l6 = muzikOzellik(
+        "assets/ucuncuyeniler.png", "Üçüncü Yeniler", "oluşturan Verchies");
+    var l7 = muzikOzellik(
+        "assets/radio.png", "Radyo'dan Beğenilenler", "oluşturan Verchies");
 
     sarkiList.add(l1);
     sarkiList.add(l2);
@@ -49,8 +56,10 @@ class _calmaListeleriState extends State<calmaListeleri> {
               itemBuilder: (context, indeks) {
                 var sarki = sarkiList[indeks];
                 return GestureDetector(
+                  onTap: () {},
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                     child: Card(
                       color: Color(0xFF121212),
                       child: SizedBox(
@@ -65,13 +74,15 @@ class _calmaListeleriState extends State<calmaListeleri> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("${sarki.muzikIsim}",
+                                  Text(
+                                    "${sarki.muzikIsim}",
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  Text("${sarki.listDetay}",
+                                  Text(
+                                    "${sarki.listDetay}",
                                     style: TextStyle(
                                         color: Color(0xFF9f9f9f),
                                         fontSize: 14,

@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -34,17 +33,15 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
-
-  var pageList = [Anasayfa(),Ara(),Kitapligin()];
-  int pageIndex = 1;
-
+  var pageList = [Anasayfa(), Ara(), Kitapligin()];
+  int pageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: pageIndex,
-        onTap: (index){
+        onTap: (index) {
           setState(() {
             pageIndex = index;
           });
@@ -54,15 +51,15 @@ class _NavigationState extends State<Navigation> {
         selectedItemColor: Color(0xFFFFFFFF),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
+            icon: Icon(Icons.home_filled, size: 20),
             label: 'Ana sayfa',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.search, size: 20),
             label: 'Ara',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.dehaze),
+            icon: Icon(Icons.dehaze, size: 20),
             label: 'Kitaplığın',
           ),
         ],

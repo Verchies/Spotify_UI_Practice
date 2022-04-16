@@ -11,7 +11,6 @@ class Kitapligin extends StatefulWidget {
 }
 
 class _KitapliginState extends State<Kitapligin> {
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -19,26 +18,27 @@ class _KitapliginState extends State<Kitapligin> {
       child: Scaffold(
         backgroundColor: Color(0xFF121212),
         appBar: PreferredSize(
-         preferredSize: Size.fromHeight(120.0),
-         child: AppBar(
-          backgroundColor: Color(0xFF121212),
-          title: Padding(
-            padding: const EdgeInsets.only(top: 32.0),
-            child: Text("Müzik\t  Podcast'ler",style: TextStyle(fontSize: 32)),
+          preferredSize: Size.fromHeight(120.0),
+          child: AppBar(
+            backgroundColor: Color(0xFF121212),
+            title: Padding(
+              padding: const EdgeInsets.only(top: 32.0),
+              child:
+                  Text("Müzik\t  Podcast'ler", style: TextStyle(fontSize: 32)),
+            ),
+            bottom: TabBar(
+              tabs: [
+                Tab(text: "Çalma Listeleri"),
+                Tab(text: "Sanatçılar"),
+                Tab(text: "Albümler"),
+              ],
+              //seçilenin alt çizgisi
+              indicatorColor: Colors.green,
+              labelColor: Colors.white,
+            ),
           ),
-          bottom: TabBar(
-            tabs: [
-              Tab(text: "Çalma Listeleri"),
-              Tab(text: "Sanatçılar"),
-              Tab(text: "Albümler"),
-            ],
-            //seçilenin alt çizgisi
-            indicatorColor: Colors.green,
-            labelColor: Colors.white,
-          ),
-         ),
         ),
-         body: TabBarView(
+        body: TabBarView(
           children: [
             calmaListeleri(),
             Sanatcilar(),

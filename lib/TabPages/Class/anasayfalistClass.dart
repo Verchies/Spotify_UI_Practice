@@ -50,7 +50,7 @@ class _listAnasayfaState extends State<listAnasayfa> {
                 ],
               ),
               shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0),
+                borderRadius: BorderRadius.circular(3.0),
               ),
             ),
           ),
@@ -77,7 +77,7 @@ class _listAnasayfaState extends State<listAnasayfa> {
                 ],
               ),
               shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0),
+                borderRadius: BorderRadius.circular(3.0),
               ),
             ),
           ),

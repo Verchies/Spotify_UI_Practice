@@ -92,11 +92,12 @@ class contRows extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Container(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        GestureDetector(
+          onTap: (){},
+          child: Container(
             margin: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Color(contColor1),
@@ -113,7 +114,10 @@ class contRows extends StatelessWidget {
             height: 95,
             width: contSize,
           ),
-          Container(
+        ),
+        GestureDetector(
+          onTap: (){},
+          child: Container(
             margin: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Color(contColor2),
@@ -130,8 +134,8 @@ class contRows extends StatelessWidget {
             height: 95,
             width: contSize,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
