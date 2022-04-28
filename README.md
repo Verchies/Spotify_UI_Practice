@@ -1,6 +1,6 @@
 # spotify_practice
 
-A new Flutter project.
+Flutter ile ilk tanıştığım zamanlar öğrenmeyi hızlandırmak için geliştirdiğim klon arayüzü.
 
 ## Getting Started
 
